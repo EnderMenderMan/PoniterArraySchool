@@ -60,6 +60,9 @@ public:
 	//@brief Removing all elements in the array.
 	void Clear();
 
+	//@brief Pushes all none NULL elemets to the start of the array.
+	void Stack();
+
 	//@brief Sort the elements of the array.
 	void Sort();
 
@@ -68,6 +71,9 @@ public:
 
 	//@brief Print all elements of the array.
 	void PrintAll();
+
+	//@brief Print all elements of the array and there index in the array.
+	void PrintAllWithIndex();
 
 	//@brief Get the element at the specified index.
 	T GetAtIndex(int index);
@@ -177,9 +183,35 @@ void PointerArray<T, size>::Clear() {
 	}
 }
 template <typename T, int size>
-void PointerArray<T, size>::Sort() {
+void PointerArray<T, size>::Stack() {
+	if (count <= 1)
+		return;
+	int placeIndex = 0;
+
 	for (int i = 0; i < size; i++) {
-		for (int j = 0; j < size - 1-i; j++) {
+		if (arrayT[i] == nullptr)
+			continue;
+
+		if (i == placeIndex)
+		{
+			placeIndex++;
+		}
+		else
+		{
+			arrayT[placeIndex] = arrayT[i];
+			arrayT[i] = nullptr;
+			placeIndex++;
+		}
+	}
+}
+template <typename T, int size>
+void PointerArray<T, size>::Sort() {
+	if (count <= 1)
+		return;
+	Stack();
+
+	for (int i = 0; i < count; i++) {
+		for (int j = 0; j < count - 1-i; j++) {
 			if (*arrayT[j] > *arrayT[j + 1]) {
 				T* tempValue = arrayT[j + 1];
 				arrayT[j + 1] = arrayT[j];
@@ -202,6 +234,14 @@ void PointerArray<T, size>::PrintAll() {
 		if (arrayT[i] == nullptr)
 			continue;
 		std::cout << *arrayT[i] << std::endl;
+	}
+}
+template <typename T, int size>
+void PointerArray<T, size>::PrintAllWithIndex() {
+	for (int i = 0; i < size; i++) {
+		if (arrayT[i] == nullptr)
+			continue;
+		std::cout << *arrayT[i] << ", Index: " << i << std::endl;
 	}
 }
 template <typename T, int size>

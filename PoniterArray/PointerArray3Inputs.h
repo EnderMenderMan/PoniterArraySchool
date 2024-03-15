@@ -20,7 +20,19 @@ public:
 		AddValue<T2>(value);
 		AddValue<T3>(value);
 	}
-	//@brief Print all elements of all arrays.
+	//@brief Sort all arrays in ascending order.
+	void SortAll() {
+		array1.Sort();
+		array2.Sort();
+		array3.Sort();
+	}
+	//@brief Reverse the order of the elements in all arrays.
+	void ReverseAll() {
+		array1.Reverse();
+		array2.Reverse();
+		array3.Reverse();
+	}
+	//@brief Print all elements in all arrays.
 	void PrintAll() {
 		if (array1.GetCount() > 0) {
 			WriteLable<T1>();

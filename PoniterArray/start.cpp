@@ -4,18 +4,30 @@
 
 int main()
 {
+	std::cout << "(Unsorted)\n";
 	PointerArray3Inputs<int, std::string, char, 10> multiArray;
 	multiArray.AddToAll(90);
-	multiArray.GetArray<char>().Add('Y');
+	multiArray.AddToAll(50);
+	multiArray.GetArray<int>().Add(95);
 	multiArray.GetArray<std::string>().Replace(3, "Hello World!");
+	multiArray.PrintAll();
+	
+	std::cout << "\n\n(Sorted)\n";
+	multiArray.SortAll();
 	multiArray.PrintAll();
 }
 
 /* EXAMPLE 1
+std::cout << "(Unsorted)\n";
 PointerArray3Inputs<int, std::string, char, 10> multiArray;
 multiArray.AddToAll(90);
-multiArray.GetArray<char>().Add('Y');
+multiArray.AddToAll(50);
+multiArray.GetArray<int>().Add(95);
 multiArray.GetArray<std::string>().Replace(3, "Hello World!");
+multiArray.PrintAll();
+
+std::cout << "\n\n(Sorted)\n";
+multiArray.SortAll();
 multiArray.PrintAll();
 */
 
