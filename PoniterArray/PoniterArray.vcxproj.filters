@@ -26,5 +26,8 @@
     <ClInclude Include="PointerArray3Inputs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PointerArrayFree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

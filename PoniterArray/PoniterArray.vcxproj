@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClInclude Include="PointerArray.h" />
     <ClInclude Include="PointerArray3Inputs.h" />
+    <ClInclude Include="PointerArrayFree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
